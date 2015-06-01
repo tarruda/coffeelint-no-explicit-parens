@@ -1,0 +1,44 @@
+{
+  "name": "coffeelint-no-explicit-parens",
+  "description": "CoffeeLint plugin for prohibiting explicit parens in function calls.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tarruda/coffeelint-no-explicit-parens",
+  "author": {
+    "name": "Thiago de Arruda",
+    "email": "tpadilha84@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tarruda/coffeelint-no-explicit-parens"
+  },
+  "bugs": {
+    "url": "https://github.com/tarruda/coffeelint-no-explicit-parens/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tarruda/coffeelint-no-explicit-parens/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "coffeelintrule",
+    "coffeelint",
+    "coffee-lint"
+  ],
+  "main": "./index",
+  "dependencies": {
+    "coffee-script": "^1.9.3"
+  },
+  "peerDependencies": {
+    "coffeelint": ">=1.9"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "coffeelint": "^1.10.0",
+    "lodash": "^3.9.3",
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  }
+}
