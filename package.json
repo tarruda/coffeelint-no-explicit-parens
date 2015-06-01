@@ -1,7 +1,7 @@
 {
   "name": "coffeelint-no-explicit-parens",
   "description": "CoffeeLint plugin for prohibiting explicit parens in function calls.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/tarruda/coffeelint-no-explicit-parens",
   "author": {
     "name": "Thiago de Arruda",
