@@ -16,15 +16,16 @@ describe 'No explicit parens', ->
     }
 
     result = if succeed then 'succeeded' else 'failed'
+    i = 1
 
     for code in tests
-      it "#{title} #{result}", ->
-        errors = coffeelint.lint(code, config)
-        if succeed
-          expect(errors).to.be.empty
-        else
-          expect(errors).to.not.be.empty
-
+      do (code) ->
+        it "#{title} #{i++} #{result}", ->
+          errors = coffeelint.lint(code, config)
+          if succeed
+            expect(errors).to.be.empty
+          else
+            expect(errors).to.not.be.empty
 
   suite 'single line strict parens', true, false, ['myFunction(a1, a2)']
 
