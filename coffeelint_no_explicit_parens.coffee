@@ -34,9 +34,13 @@ module.exports = class NoExplicitParens
 
     i = -1
     line = token[2].first_line
+    pending = 0
     while t = tokenApi.peek(i)
       # Check previous tokens until CALL_START is found.
-      if t[0] is 'CALL_START'
+      if t[0] is 'CALL_END'
+        # nested call, increase pending count
+        pending++
+      else if t[0] is 'CALL_START' and not pending--
         # If the call started on the same line, allow it.
         return line isnt t[2].first_line
       i--

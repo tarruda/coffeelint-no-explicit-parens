@@ -57,6 +57,22 @@ describe 'No explicit parens', ->
       a3
     )
     '''
+
+    '''
+    myFunction(
+      a1,
+      a2,
+      a3,
+      myFunction2(a21, a22))
+    '''
+
+    '''
+    myFunction(
+      a1,
+      a2,
+      a3,
+      myFunction2(a21, func()))
+    '''
   ]
 
   suite 'single line no strict parens', false, true, ['myFunction(a1, a2)']
@@ -88,6 +104,22 @@ describe 'No explicit parens', ->
       a2,
       a3
     )
+    '''
+
+    '''
+    myFunction(
+      a1,
+      a2,
+      a3,
+      myFunction2(a21, a22))
+    '''
+
+    '''
+    myFunction(
+      a1,
+      a2,
+      a3,
+      myFunction2(a21, func()))
     '''
   ]
 
