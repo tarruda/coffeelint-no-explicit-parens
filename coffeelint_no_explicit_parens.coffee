@@ -29,7 +29,10 @@ module.exports = class NoExplicitParens
   tokens: ['CALL_END']
 
   lintToken: (token, tokenApi) ->
-    if not token.generated and tokenApi.config[@rule.name].strict
+    if token.generated
+      return false
+
+    if tokenApi.config[@rule.name].strict
       return true
 
     i = -1

@@ -27,7 +27,11 @@ describe 'No explicit parens', ->
           else
             expect(errors).to.not.be.empty
 
-  suite 'single line strict parens', true, false, ['myFunction(a1, a2)']
+  suite 'single line strict parens', true, false, [
+    'myFunction(a1, a2)'
+    'myFunction(a1, myFunction2())'
+    'myFunction(a1, myFunction2(func()))'
+  ]
 
   suite 'single line strict no parens', true, true, ['myFunction a1, a2']
 
@@ -75,7 +79,11 @@ describe 'No explicit parens', ->
     '''
   ]
 
-  suite 'single line no strict parens', false, true, ['myFunction(a1, a2)']
+  suite 'single line no strict parens', false, true, [
+    'myFunction(a1, a2)'
+    'myFunction(a1, myFunction2())'
+    'myFunction(a1, myFunction2(func()))'
+  ]
 
   suite 'single line no strict no parens', false, true, ['myFunction a1, a2']
 
@@ -123,7 +131,7 @@ describe 'No explicit parens', ->
     '''
   ]
 
-  suite 'multi line no strict no parens', false, false, [
+  suite 'multi line no strict no parens', false, true, [
     '''
     myFunction a1, a2,
       a3
@@ -135,3 +143,11 @@ describe 'No explicit parens', ->
       a3
     '''
   ]
+
+  suite 'multi line callback mixed no strict', false, true, [
+    '''
+    myFunction 'arg', ->
+      stream().pipe(stream2()).pipe(stream3())
+    '''
+  ]
+
